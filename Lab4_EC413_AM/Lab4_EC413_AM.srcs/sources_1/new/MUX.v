@@ -20,7 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUX(output [31:0] sum_out, output c_out, input [31:0] sum0, sum1, input c0, c1, input c_in);
+module MUX(
+    output [3:0] sum_out,
+    output c_out,
+    input [3:0] sum0, sum1,
+    input c0, c1,
+    input c_in
+);
     assign sum_out = (c_in) ? sum1 : sum0;
-    assign c_out = (c_in) ? c1 : c0;
+    assign c_out   = (c_in) ? c1   : c0;
 endmodule

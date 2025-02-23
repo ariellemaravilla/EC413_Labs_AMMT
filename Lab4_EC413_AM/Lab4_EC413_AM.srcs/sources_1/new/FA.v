@@ -35,17 +35,17 @@ not	   not1		(not_a, a);
 not	   not2		(not_b, b);
 not	   not3		(not_c, c_in);
 
-// get sum
+// get sum: mimic xor function
 AND_T_3		and1		(and1_out, a, not_b, not_c);
 AND_T_3		and2		(and2_out, not_a, b, not_c);
 AND_T_3		and3		(and3_out, not_a, not_b, c_in);
 AND_T_3		and4		(and4_out, a, b, c_in);
-OR_T_4		or1		(sum, and1_out, and2_out, and3_out, and4_out);
+OR_T_4		or1		    (sum, and1_out, and2_out, and3_out, and4_out);
 
 AND_T_2		and5		(and5_out, a, c_in);
 AND_T_2		and6		(and6_out, b, c_in);
 AND_T_2		and7		(and7_out, a, b);
-OR_T_3		or2		(c_out, and5_out, and6_out, and7_out);
+OR_T_3		or2		    (c_out, and5_out, and6_out, and7_out);
 
 // For Pre-Lab4 Step 4: swapped sum and c_out in OR_T4 and OR_T_3 to see error_flag
 

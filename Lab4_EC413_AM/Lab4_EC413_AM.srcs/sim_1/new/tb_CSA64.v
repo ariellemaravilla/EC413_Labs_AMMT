@@ -22,86 +22,73 @@
 
 module tb_CSA64;
 
-// Inputs
+    // Inputs
     reg [63:0] a, b;
     reg c_in;
+    reg clk;
 
     // Outputs
     wire [63:0] sum;
     wire c_out;
+    wire [63:0] sum_verify;
+    wire c_out_verify;
+    wire error_flag;
 
-    // Reference Model for Verification
-    reg [63:0] expected_sum;
-    reg expected_c_out;
-
-    // Instantiate the CSA 64-bit module
-    CSA64 uut (
-        .sum(sum),
-        .c_out(c_out),
-        .a(a),
-        .b(b),
+    // Instantiate the Unit Under Test (UUT)
+    CSA64 CSA64 (
+        .sum(sum), 
+        .c_out(c_out), 
+        .a(a), 
+        .b(b), 
         .c_in(c_in)
     );
 
-    // Timing Control
-    `define TIME_DELAY #5  // Artificial delay
+    // Instantiate the Verification Module
+    Verification_64bit Verification (
+        .C_out_verify(c_out_verify), 
+        .Sum_verify(sum_verify), 
+        .A(a), 
+        .B(b), 
+        .C_in(c_in)
+    );
 
-    // Testbench Initialization
+    // Assign Error Flag
+    assign error_flag = (sum !== sum_verify) || (c_out !== c_out_verify);
+
+    // Verification logic - Display errors
+    always @(posedge clk) begin
+        if (error_flag)
+            $display("ERROR when A = %h, B = %h, C_in = %b | Expected Sum = %h, Got Sum = %h | Expected C_out = %b, Got C_out = %b",
+                     a, b, c_in, sum_verify, sum, c_out_verify, c_out);
+    end
+
+    // Generate Clock Signal
+    always #5 clk = ~clk;
+
+    // Test Cases (Satisfying Lab Requirements)
     initial begin
-        $dumpfile("CSA_64bit_tb.vcd");  // Generates waveform file
-        $dumpvars(0, tb_CSA64);     // Captures all variables
+        clk = 0;
 
-        $monitor("Time=%0t | A=%h B=%h C_in=%b | Sum=%h C_out=%b | Expected Sum=%h Expected C_out=%b",
-                  $time, a, b, c_in, sum, c_out, expected_sum, expected_c_out);
+        // Case 1: Force an overall carry-out (Expect c_out = 1)
+        a = 64'hFFFFFFFFFFFFFFFF; b = 64'h0000000000000001; c_in = 1; #10;
 
-        // Test Case 1: Small numbers with no carry-in
-        a = 64'h0000000000000001; b = 64'h0000000000000001; c_in = 0;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a); // Carry occurs if sum overflows
-        `TIME_DELAY;
+        // Case 2a: Random large A & B input (with carry)
+        a = 64'hABCDEF1234567890; b = 64'hFEDCBA9876543210; c_in = 1; #10;
 
-        // Test Case 2: Large numbers with carry-in
-        a = 64'hFFFFFFFFFFFFFFFF; b = 64'h0000000000000001; c_in = 1;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a);
-        `TIME_DELAY;
+        // Case 2b: Random large A & B input (without carry)
+        a = 64'hFFFFFFFF00000000; b = 64'h00000000FFFFFFFF; c_in = 0; #10;
 
-        // Test Case 3: Large numbers both near overflow
-        a = 64'hFFFFFFFFFFFFFFFF; b = 64'hFFFFFFFFFFFFFFFF; c_in = 1;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a);
-        `TIME_DELAY;
+        // Case 3a: Random small A & B input (with carry)
+        a = 64'h00000000000000F0; b = 64'h000000000000000F; c_in = 1; #10;
 
-        // Test Case 4: Random large numbers
-        a = 64'h123456789ABCDEF0; b = 64'h0FEDCBA987654321; c_in = 0;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a);
-        `TIME_DELAY;
+        // Case 3b: Random small A & B input (without carry)
+        a = 64'h0000000000000003; b = 64'h0000000000000007; c_in = 0; #10;
 
-        // Test Case 5: Small numbers with carry-in
-        a = 64'h0000000000000003; b = 64'h0000000000000004; c_in = 1;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a);
-        `TIME_DELAY;
+        // Case 4: Random combinations
+        a = 64'h1A2B3C4D5E6F7080; b = 64'h0F1E2D3C4B5A6978; c_in = 1; #10;
+        a = 64'hDEADBEEFCAFE1234; b = 64'h0123456789ABCDEF; c_in = 0; #10;
 
-        // Test Case 6: Random values with carry-in
-        a = 64'h1A2B3C4D5E6F7081; b = 64'h1029384756576879; c_in = 1;
-        expected_sum = a + b + c_in;
-        expected_c_out = (expected_sum < a);
-        `TIME_DELAY;
-
-        // Final Message
-        $display("All test cases completed successfully!");
-        $finish;
+        $stop;
     end
 
-    // Verification Logic: Compares Expected and Actual Results
-    always @(sum, c_out) begin
-        if (sum !== expected_sum || c_out !== expected_c_out) begin
-            $display("ERROR: Mismatch at time %0t: Expected Sum=%h, Got Sum=%h | Expected Carry=%b, Got Carry=%b",
-                      $time, expected_sum, sum, expected_c_out, c_out);
-        end
-    end
 endmodule
-	
-

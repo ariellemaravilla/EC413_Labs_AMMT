@@ -1,0 +1,22 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_CSA64.v,1740192443,verilog,,,,tb_CSA64,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_FA.v,1740278886,verilog,,,,tb_FA,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_RCA4.v,1740283406,verilog,,,,tb_RCA4,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_RCA64.v,1740284530,verilog,,,,tb_RCA64,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/AND_T_2.v,1740277046,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/AND_T_3.v,,AND_T_2,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/AND_T_3.v,1740277055,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/CSA64.v,,AND_T_3,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/CSA64.v,1740286204,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/CSA_Block.v,,CSA64,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/CSA_Block.v,1740191568,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/FA.v,,CSA_Block,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/FA.v,1740278341,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/MUX.v,,FA,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/MUX.v,1740188537,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/OR_T_3.v,,MUX,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/OR_T_3.v,1740277062,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/OR_T_4.v,,OR_T_3,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/OR_T_4.v,1740277062,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/RCA4.v,,OR_T_4,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/RCA4.v,1740187594,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/Verification_64bit.v,,RCA4,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/RCA64.v,1740284841,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/Verification_64bit.v,,RCA64,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/Verification_1bit.v,1740278787,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_FA.v,,Verification_1bit,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/Verification_4bit.v,1740282078,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_RCA4.v,,Verification_4bit,,,,,,,,
+/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sources_1/new/Verification_64bit.v,1740282076,verilog,,/ad/eng/users/a/m/amaravil/Desktop/EC413/Vivado_Stuff/Lab4_EC413_AM/Lab4_EC413_AM.srcs/sim_1/new/tb_CSA64.v,,Verification_64bit,,,,,,,,

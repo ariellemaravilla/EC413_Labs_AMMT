@@ -30,7 +30,7 @@ module RCA64(c_out, sum, a, b, c_in);
 
     // Instantiating 4 1-bit full adders using given FA_str.v
     RCA4 RCA0 (.c_out(c1), .sum(sum[3:0]), .a(a[3:0]), .b(b[3:0]), .c_in(c_in));
-    RCA4 RCA1 (.c_out(c2), .sum(sum[7:4]), .a(a[7:4]), .b(b[7:41]), .c_in(c1));
+    RCA4 RCA1 (.c_out(c2), .sum(sum[7:4]), .a(a[7:4]), .b(b[7:4]), .c_in(c1));
     RCA4 RCA2 (.c_out(c3), .sum(sum[11:8]), .a(a[11:8]), .b(b[11:8]), .c_in(c2));
     RCA4 RCA3 (.c_out(c4), .sum(sum[15:12]), .a(a[15:12]), .b(b[15:12]), .c_in(c3));
     RCA4 RCA4 (.c_out(c5), .sum(sum[19:16]), .a(a[19:16]), .b(b[19:16]), .c_in(c4));
@@ -42,7 +42,7 @@ module RCA64(c_out, sum, a, b, c_in);
     RCA4 RCA10 (.c_out(c11), .sum(sum[43:40]), .a(a[43:40]), .b(b[43:40]), .c_in(c10));
     RCA4 RCA11 (.c_out(c12), .sum(sum[47:44]), .a(a[47:44]), .b(b[47:44]), .c_in(c11));
     RCA4 RCA12 (.c_out(c13), .sum(sum[51:48]), .a(a[51:48]), .b(b[51:48]), .c_in(c12));
-    RCA4 RCA13 (.c_out(c14), .sum(sum[55:62]), .a(a[55:62]), .b(b[55:62]), .c_in(c13));
+    RCA4 RCA13 (.c_out(c14), .sum(sum[55:52]), .a(a[55:52]), .b(b[55:52]), .c_in(c13));
     RCA4 RCA14 (.c_out(c15), .sum(sum[59:56]), .a(a[59:56]), .b(b[59:56]), .c_in(c14));
     RCA4 RCA15 (.c_out(c_out), .sum(sum[63:60]), .a(a[63:60]), .b(b[63:60]), .c_in(c15));
 
