@@ -23,7 +23,7 @@
 
 // Delayed AND gate
 
-module AND_T_3t(tout, in1, in2, in3);
+module AND_T_3t(out, in1, in2, in3);
 
 input in1, in2, in3;
 output out;
